@@ -11,6 +11,18 @@
 |
 */
 
+Route::group(['prefix'=>'admin'], function(){
+
+    Route::group(['prefix'=>'categories'], function(){
+        Route::get('/', 'AdminCategoriesController@index');
+    });
+
+    Route::group(['prefix'=>'products'], function(){
+        Route::get('/', 'AdminProductsController@index');
+    });
+
+});
+
 Route::get('/', 'WelcomeController@index');
 Route::get('exemplo', 'WelcomeController@exemplo');
 
